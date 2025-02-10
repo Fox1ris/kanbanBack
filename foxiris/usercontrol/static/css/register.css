@@ -1,0 +1,80 @@
+body {
+    font-family: Monotype Corsiva, sans-serif;
+    font-size: 25px;
+    background-color: #2c2c2c;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+.login-container {
+    background-color: #182839;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    text-align: center;
+}
+.login-container h2 {
+    margin-bottom: 20px;
+}
+.login-container input[type="text"],
+.login-container input[type="password"],
+.login-container input[type="email"] {
+    width: 92%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-right: 100px
+}
+
+.login-container input[type="text"]:valid,
+.login-container input[type="password"]:valid,
+.login-container input[type="email"]:valid {
+    border: 2px solid #ccc;
+    border-color: green
+
+}
+
+.login-container input[type="text"]:invalid,
+.login-container input[type="password"]:invalid,
+.login-container input[type="email"]:invalid {
+    border: 2px solid #ccc;
+    border-color: red
+
+}
+
+.login-container input[type="submit"] {
+    font-family: Monotype Corsiva, sans-serif;
+    width: 100%;
+    padding: 10px;
+    background-color: #28a745;
+    border: none;
+    border-radius: 4px;
+    color: #fff;
+    font-size: 20px;
+    cursor: pointer;
+}
+.login-container input[type="submit"]:hover {
+    background-color: #1527367;
+}
+
+.login-container .register-link {
+    margin-top: 10px;
+    display: block;
+    color: #007bff;
+    text-decoration: none;
+}
+.login-container .register-link:hover {
+    text-decoration: underline;
+}
+
+input:valid {
+  border-color: green;
+}
+
+input:invalid {
+  border-color: red;
+}

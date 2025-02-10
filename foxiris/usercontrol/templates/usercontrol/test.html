@@ -1,0 +1,25 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/test.css' %}">
+    <title>Страница логина</title>
+</head>
+<body>
+
+<div class="login-container">
+    <h2>Вход</h2>
+    <form action="" method="POST">
+        {% csrf_token %}
+        <input type="text" name="name" required  maxlength="15">
+        <input type="number" name="age" min="18" required>
+        <input type="submit" value="Зарегистрироваться">
+        {{ form.errors }}
+    </form>
+    <a href="{% url 'register' %}" class="register-link">Зарегистрироваться</a>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,27 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <link rel="stylesheet" href="{% static 'css/register.css' %}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Регистрация</title>
+</head>
+<body>
+
+<div class="login-container">
+    <h2>Регистрация</h2>
+    <form action="" method="POST">
+        {% csrf_token %}
+        <input type="text" class ="input_error"  name="username" placeholder="Имя пользователя" required pattern="[A-Za-z0-9]{4,8}">
+        <input type="password" class ="input_error" name="password" placeholder="Пароль" required pattern="[A-Za-z0-9]{8,30}">
+        <input type="password" class ="input_error" name="password1" placeholder="Повторите пароль" required>
+        <input type="email" class ="input_error" name="email" placeholder="Почта" required>
+
+
+        <input type="submit" value="Зарегистрироваться">
+    </form>
+</div>
+
+</body>
+</html>
