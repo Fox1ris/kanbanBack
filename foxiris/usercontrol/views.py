@@ -5,6 +5,7 @@ from django.contrib.auth.models import User
 
 
 def login_page(request):
+    print('hello')
     return render(request, 'usercontrol/login.html')
 
 
