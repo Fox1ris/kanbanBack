@@ -21,5 +21,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('main.urls')),
     path('login/', include('usercontrol.urls')),
-    path('profile/', include('userprofile.urls'))
+    path('profile/', include('userprofile.urls')),
+    path('kanbandata/', include('kanbandata.urls'))
 ]
