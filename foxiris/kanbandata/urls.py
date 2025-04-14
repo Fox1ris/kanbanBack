@@ -1,7 +1,12 @@
-from django.urls import path
+from django.urls import path, include
+from rest_framework.routers import DefaultRouter
+
 from .views import ProjectListView, KanbanTaskListView
 
+router = DefaultRouter()
+router.register(r'projects', ProjectListView)
+router.register(r'tasks', KanbanTaskListView, basename='task')
+
 urlpatterns = [
-    path('projects/', ProjectListView.as_view(), name='projects'),
-    path('tasks/', KanbanTaskListView.as_view(), name='tasks'),
+    path('', include(router.urls)),
 ]
