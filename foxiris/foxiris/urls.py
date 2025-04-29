@@ -19,8 +19,10 @@ from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('kanbandata/auth/', include('rest_framework.urls')),
     path('', include('main.urls')),
     path('login/', include('usercontrol.urls')),
     path('profile/', include('userprofile.urls')),
-    path('kanbandata/', include('kanbandata.urls'))
+    path('kanbandata/', include('kanbandata.urls')),
+    path('api/auth/', include('knox.urls')),
 ]

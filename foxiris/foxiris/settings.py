@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'corsheaders',
+    'knox',
 
 ]
 
@@ -73,10 +74,16 @@ SESSION_COOKIE_SECURE = True  # Для HTTPS
 REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': [
         'rest_framework.permissions.AllowAny',
-    ]
+    ],
+    'DEFAULT_AUTHENTICATION_CLASSES': ('knox.auth.TokenAuthentication',),
 }
 
 ROOT_URLCONF = 'foxiris.urls'
+
+AUTH_USER_MODEL = 'kanbandata.CustomUser'
+AUTHENTICATION_BACKENDS = [
+    'kanbandata.auth.UsernameAuth'
+]
 
 TEMPLATES = [
     {
