@@ -54,6 +54,7 @@ class KanbanTask(models.Model):
         ('done', 'Готово'),
     ]
 
+    user = models.ForeignKey(CustomUser, null=True, blank=True, on_delete=models.CASCADE, related_name='user')
     project = models.ForeignKey(Project, on_delete=models.CASCADE, related_name='tasks')
     title = models.CharField(max_length=100)
     description = models.TextField()
